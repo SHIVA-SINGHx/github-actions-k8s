@@ -200,11 +200,11 @@ make down                        # deletes the cluster (and the MySQL data with 
 What `make up` actually runs, in order:
 
 ```bash
-docker build -t trainwithshubham/skillpulse-backend:latest  ./backend
-docker build -t trainwithshubham/skillpulse-frontend:latest ./frontend
+docker build -t shivaax/skillpulse-backend:latest  ./backend
+docker build -t shivaax/skillpulse-frontend:latest ./frontend
 kind create cluster --config k8s/kind-config.yaml --name skillpulse
-kind load docker-image trainwithshubham/skillpulse-backend:latest  --name skillpulse
-kind load docker-image trainwithshubham/skillpulse-frontend:latest --name skillpulse
+kind load docker-image shivaax/skillpulse-backend:latest  --name skillpulse
+kind load docker-image shivaax/skillpulse-frontend:latest --name skillpulse
 kubectl apply -f k8s/00-namespace.yaml \
               -f k8s/10-mysql.yaml \
               -f k8s/20-backend.yaml \
